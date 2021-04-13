@@ -13,7 +13,7 @@ cd calcular_PRSs
 pip install -r requirements.txt
 ```
 
-Asegurarse de tener un PLINK dataset `{bed,bim,fam}` con exactamente los ~6M
+Asegurarse de tener un PLINK dataset `{bed,bim,fam}` con al menos los ~6M
 genotipos de la lista `data/variants_for_LDAK.tsv.gz`. En el `.bim`, los SNPs
 deben estar nombrados como `CHROM:POS`, al igual que el campo `predictor` del
 archivo, y también deben incluir el dato de `cM` (centiMorgan) que ahí figura.
