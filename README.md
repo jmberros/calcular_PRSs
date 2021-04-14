@@ -18,7 +18,7 @@ genotipos de la lista `data/variants_for_LDAK.tsv.gz`. En el `.bim`, los SNPs
 deben estar nombrados como `CHROM:POS`, al igual que el campo `predictor` del
 archivo, y también deben incluir el dato de `cM` (centiMorgan) que ahí figura.
 
-Calcular los PRSs así:
+Cuando ese dataset esté generado, se pueden calcular los PRSs así:
 
 ```bash
 ./calcular_PRS.py --pheno-code <CODE> --plink-label <LABEL> --max-threads 12
