@@ -21,7 +21,7 @@ archivo, y también deben incluir el dato de `cM` (centiMorgan) que ahí figura.
 Cuando ese dataset esté generado, se pueden calcular los PRSs así:
 
 ```bash
-./calcular_PRS.py --pheno-code <CODE> --plink-label <LABEL> --max-threads 12
+./calcular_PRSs.py --pheno-code <CODE> --plink-label <LABEL> --max-threads 12
 ```
 
 Por ejemplo, si el dataset PLINK está en `/datasets/EUR.{bed,bim,fam}` y nos
@@ -29,7 +29,7 @@ interesa calcular PRSs de Celiaquía (código: `K11_COELIAC`) usando 4 threads,
 correríamos:
 
 ```bash
-./calcular_PRS.py --pheno-code K11_COELIAC --plink-label /datasets/EUR --max-threads 4
+./calcular_PRSs.py --pheno-code K11_COELIAC --plink-label /datasets/EUR --max-threads 4
 ```
 
 Si todo sale bien, los archivos `.profile.gz` se generarán en un nuevo
