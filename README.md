@@ -32,4 +32,5 @@ correríamos:
 ./calcular_PRS.py --pheno-code K11_COELIAC --plink-label /datasets/EUR --max-threads 4
 ```
 
-Si todo sale bien, los archivos `.profile.gz` se generarán en `results/`.
+Si todo sale bien, los archivos `.profile.gz` se generarán en un nuevo
+directorio de `results/`.
