@@ -21,7 +21,7 @@ la lista `data/variants_for_LDAK.tsv.gz`. Debe cumplir que:
     tiene una opción `--set-all-var-ids '@:#'` para esto
     (https://www.cog-genomics.org/plink/2.0/data#set_all_var_ids)
   * Sólo SNPs autosómicos. (Creo que acepta X Y MT pero en versión numérica,
-    24, 25, 26 respectivamente. Más fácil quitarlos, pues los PRS que
+    23, 24, 25 respectivamente. Más fácil quitarlos, pues los PRS que
     calcularemos no los incluyen.)
   * No debe haber SNPs duplicados. PLINK2 tiene `--rm-dup exclude-all` para
     resolverlo rápido. Tip: hacerlo luego de setear los IDs como CHROM:POS.
