@@ -9,13 +9,6 @@ import requests
 from termcolor import cprint, colored
 from humanfriendly import format_timespan
 
-def check_output_exists(fp):
-    if isfile(fp) or isfile(fp + ".gz"):
-        print(f"Output exists:", colored(f"{fp}[.gz]", "green"))
-        return True
-    else:
-        print(f"Output absent:", colored(f"{fp}[.gz]", "red"))
-        return False
 
 def gzip(fp):
     run_shell_command(f"gzip -vf {fp}")

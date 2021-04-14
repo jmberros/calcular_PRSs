@@ -18,7 +18,7 @@ from docopt import docopt
 from helpers import (
     download_url_to,
     make_executable,
-    check_output_exists,
+    file_is_present,
     run_shell_command,
     gunzip,
     gzip,
@@ -42,8 +42,7 @@ def main(ukbb_pheno_code, plink_label, max_threads):
     out_label = f"results/{ukbb_pheno_code}.{model}"
     out_profile_fp = f"{out_label}.profile"
 
-    if check_output_exists(out_profile_fp):
-        return
+    file_is_present(out_profile_fp) and exit()
 
     # get LDAK executable
     ldak_exec = f"software/ldak5.1.linux.fast"
@@ -61,12 +60,12 @@ def main(ukbb_pheno_code, plink_label, max_threads):
     makedirs(dirname(out_label), exist_ok=True)
     command = (
         f"{ldak_exec} \\\n" +
-        f"--calc-scores {out_label} \\\n"
-        f"--bfile {plink_label} \\\n"
-        f"--scorefile {effects_fp} \\\n"
-        f"--power 0 \\\n"
-        f"--max-threads {max_threads} | \\\n"
-        f"tee {out_label}.log"
+        f"\t --calc-scores {out_label} \\\n"
+        f"\t --bfile {plink_label} \\\n"
+        f"\t --scorefile {effects_fp} \\\n"
+        f"\t --power 0 \\\n"
+        f"\t --max-threads {max_threads} | \\\n"
+        f"\t tee {out_label}.log"
     )
     run_shell_command(command)
 

@@ -13,10 +13,24 @@ cd calcular_PRSs
 pip install -r requirements.txt
 ```
 
-Asegurarse de tener un PLINK dataset `{bed,bim,fam}` con al menos los ~6M
-genotipos de la lista `data/variants_for_LDAK.tsv.gz`. En el `.bim`, los SNPs
-deben estar nombrados como `CHROM:POS`, al igual que el campo `predictor` del
-archivo, y también deben incluir el dato de `cM` (centiMorgan) que ahí figura.
+Asegurarse de tener un PLINK dataset `{bed,bim,fam}` con los ~6M genotipos de
+la lista `data/variants_for_LDAK.tsv.gz`. Debe cumplir que:
+
+  * En el `.bim`, los SNPs deben estar nombrados como `CHROM:POS`, al igual que
+    el campo `predictor` del archivo `data/variants_for_LDAK.tsv.gz`. PLINK2
+    tiene una opción `--set-all-var-ids '@:#'` para esto
+    (https://www.cog-genomics.org/plink/2.0/data#set_all_var_ids)
+  * Sólo SNPs autosómicos. (Creo que acepta X Y MT pero en versión numérica,
+    24, 25, 26 respectivamente. Más fácil quitarlos, pues los PRS que
+    calcularemos no los incluyen.)
+  * No debe haber SNPs duplicados. PLINK2 tiene `--rm-dup exclude-all` para
+    resolverlo rápido. Tip: hacerlo luego de setear los IDs como CHROM:POS.
+    (https://www.cog-genomics.org/plink/2.0/filter#rm_dup)
+  * El campo de centimorgans parece ser opcional, en el `.bim` pueden ser todos
+    `0`.
+
+Si algo no está bien, LDAK mismo se quejará y se verá en el output, que suele
+ser bastante claro.
 
 Cuando ese dataset esté generado, se pueden calcular los PRSs así:
 
@@ -25,7 +39,7 @@ Cuando ese dataset esté generado, se pueden calcular los PRSs así:
 ```
 
 Por ejemplo, si el dataset PLINK está en `/datasets/EUR.{bed,bim,fam}` y nos
-interesa calcular PRSs de Celiaquía (código: `K11_COELIAC`) usando 4 threads,
+interesa calcular PRSs de Celiaquía (código: `K11_COELIAC`) usando `4` threads,
 correríamos:
 
 ```bash
