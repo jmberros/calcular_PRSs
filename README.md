@@ -23,8 +23,8 @@ la lista `data/variants_for_LDAK.tsv.gz`. Debe cumplir que:
   * Sólo SNPs autosómicos. (Creo que acepta X Y MT pero en versión numérica,
     23, 24, 25 respectivamente. Más fácil quitarlos, pues los PRS que
     calcularemos no los incluyen.)
-  * No debe haber SNPs duplicados. PLINK2 tiene `--rm-dup exclude-all` para
-    resolverlo rápido. Tip: hacerlo luego de setear los IDs como CHROM:POS.
+  * No debe haber SNPs con el mismo ID. PLINK2 tiene `--rm-dup exclude-all`
+    para resolverlo rápido.
     (https://www.cog-genomics.org/plink/2.0/filter#rm_dup)
   * El campo de centimorgans parece ser opcional, en el `.bim` pueden ser todos
     `0`.
