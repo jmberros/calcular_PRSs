@@ -44,7 +44,6 @@ def main(ukbb_pheno_code, plink_label, max_threads):
 
     file_is_present(out_profile_fp) and exit()
 
-    # get LDAK executable
     ldak_exec = f"software/ldak5.1.linux.fast"
     make_executable(ldak_exec)
 
