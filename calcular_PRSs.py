@@ -73,6 +73,7 @@ def main(ukbb_pheno_code, plink_label, max_threads):
     gzip(effects_fp)
     gzip(out_profile_fp)
 
+
 if __name__ == "__main__":
     args = docopt(__doc__)
     main(
