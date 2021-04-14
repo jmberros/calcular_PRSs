@@ -35,7 +35,7 @@ ser bastante claro.
 Cuando ese dataset esté generado, se pueden calcular los PRSs así:
 
 ```bash
-./calcular_PRSs.py --pheno-code <CODE> --plink-label <LABEL> --max-threads 12
+./calcular_PRSs.py --pheno-code <CODE> --plink-label <LABEL> --max-threads <N>
 ```
 
 Por ejemplo, si el dataset PLINK está en `/datasets/EUR.{bed,bim,fam}` y nos
