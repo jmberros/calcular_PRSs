@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Usage:
-    calcular_PRS.py --pheno-code CODE --plink-label LABEL [--max-threads N]
+    calcular_PRSs.py --pheno-code CODE --plink-label LABEL [--max-threads N]
 
 Options:
     --pheno-code=CODE    Código de fenotipo de UKBB.
@@ -25,7 +25,8 @@ from helpers import (
 )
 
 
-host = "http://biocodices.hopto.org/public/tesis_juan"
+# host = "http://biocodices.hopto.org/public/tesis_juan"
+host = "http://localhost/public/tesis_juan"
 
 def code2pheno(code):
     pheno_codes_fp = f"data/ukbb_phenotypes.phenotype-codes.tsv"
