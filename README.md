@@ -25,8 +25,8 @@ Cuando ese dataset esté generado, se pueden calcular los PRSs así:
 ```
 
 Por ejemplo, si el dataset PLINK está en `/datasets/EUR.{bed,bim,fam}` y nos
-interesa calcular PRSs con para Celiaquía (código: `K11_COELIAC`) usando 4
-threads, correríamos:
+interesa calcular PRSs de Celiaquía (código: `K11_COELIAC`) usando 4 threads,
+correríamos:
 
 ```bash
 ./calcular_PRS.py --pheno-code K11_COELIAC --plink-label /datasets/EUR --max-threads 4
