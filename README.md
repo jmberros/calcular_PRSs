@@ -32,8 +32,4 @@ correríamos:
 ./calcular_PRS.py --pheno-code K11_COELIAC --plink-label /datasets/EUR --max-threads 4
 ```
 
-  * Los códigos de fenotipo UKBB disponibles están en `data/ukbb_phenotypes.phenotype-codes.tsv`. Por ejemplo, `K11_COELIAC` es celiaquía.
-  * El `<LABEL>` del dataset de Plink debe ir sin `.bed`.
-  * `--max-threads` controla el máximo de threads que usará LDAK.
-
 Si todo sale bien, los archivos `.profile.gz` se generarán en `results/`.
